@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     )
                   : SizedBox(
-                      height: 720,
+                      height: (product.length / 2) * 290,
                       width: double.infinity,
                       child: GridView.builder(
                           itemCount: product.length,
@@ -212,6 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisCount: 2,
                             mainAxisExtent: 290,
                           ),
+                          physics: NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) =>
                               productCard(product[index])),
                     ),
